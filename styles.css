@@ -1,0 +1,397 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+
+body{
+    font-family: 'Old Standard TT', serif;
+    background: radial-gradient(circle at 30% 20%, #111, #000 70%);
+    color:#e5e5e5;
+    overflow-x:hidden;
+}
+
+
+.noise{
+    position:fixed;
+    inset:0;
+    background:url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity:.08;
+    z-index:999;
+    pointer-events:none;
+}
+
+.image-button{
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    background: #000;
+}
+
+/* The image */
+.image-button img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Text overlay */
+.image-button .overlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.25),
+        transparent
+    );
+    color: white;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover effects */
+.image-button:hover img{
+    transform: scale(1.08);
+}
+
+.image-button:hover .overlay{
+    opacity: 1;
+}
+
+
+
+header{
+    display:flex;
+    justify-content:space-between;
+    padding:24px 60px;
+    position:fixed;
+    width:100%;
+    z-index:10;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+    border-radius:50%;
+    filter:none;
+}
+
+::selection{
+    background: #777;
+    color: #000;
+}
+
+::-moz-selection{
+    background: #777;
+    color: #000;
+}
+
+
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.4);
+    color:#e6e6e6;
+    padding:10px 28px;
+    text-decoration:none;
+    font-family:'Old Standard TT', serif;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:0.4s ease;
+    backdrop-filter: blur(6px);
+}
+
+.btn:hover{
+    background:rgba(255,255,255,0.08);
+    border-color:#fff;
+}
+
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-family: 'Old Standard TT', serif;
+    font-size:120px;
+    letter-spacing:4px;
+    color:#e6e6e6;
+    animation: entropyGlow 5s ease-in-out infinite;
+}
+
+.thumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px; 
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+.subtitle{
+    margin-top:10px;
+    font-size:20px;
+    opacity:.8;
+}
+
+.meta{
+    margin-top:12px;
+    font-size:12px;
+    letter-spacing:3px;
+    opacity:.5;
+}
+
+.cta{
+    margin-top:40px;
+    padding:14px 36px;
+    border:1px solid #555;
+    color:#fff;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.cta:hover{
+    background:#fff;
+    color:#000;
+}
+
+/* Domains */
+.domains{
+    padding:160px 10%;
+    text-align:center;
+}
+
+.domains h2{
+    font-family:'Cinzel', serif;
+    font-size:36px;
+    margin-bottom:80px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+.card{
+    padding:30px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.02);
+    backdrop-filter:blur(10px);
+    transition:.6s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 40px 80px rgba(0,0,0,.8);
+}
+
+.thumb{
+    height:160px;
+    margin-top:20px;
+    background:linear-gradient(120deg,#111,#333,#111);
+    border-radius:8px;
+    animation: shimmer 8s infinite linear;
+}
+
+.spotify{
+    background:radial-gradient(circle,#222,#000);
+}
+
+/* Feature */
+.feature{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    padding:200px 10%;
+}
+
+.glass{
+    position:relative;
+    width:260px;
+    height:260px;
+}
+
+.box{
+    width:100%;
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(135deg,#111,#222);
+    z-index:2;
+    position:relative;
+}
+
+.glow{
+    position:absolute;
+    inset:-40px;
+    background:linear-gradient(45deg,#555,#aaa,#555);
+    filter:blur(70px);
+    animation:pulse 8s infinite alternate;
+}
+
+
+.feature-text h3{
+    font-family:'Cinzel', serif;
+    font-size:48px;
+}
+
+.tag{
+    color:#ff6a00;
+    letter-spacing:2px;
+}
+
+.box{
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+
+.download-logo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+
+
+.box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px; /* keep same radius */
+}
+
+.download-logo {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
+    opacity: 0.95;
+    z-index: 2;
+    filter: drop-shadow(0 0 24px rgba(255,255,255,0.15));
+    pointer-events: none;
+}
+
+
+
+
+
+.coming{
+    opacity:.6;
+}
+
+/* Questions */
+.questions{
+    padding:200px 10%;
+    text-align:center;
+}
+
+.download-logo{
+    border-radius: 20px;
+}
+
+/* Footer */
+footer{
+    display:flex;
+    justify-content:space-between;
+    padding:40px 10%;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+@keyframes entropyGlow{
+    0%{
+        text-shadow:0 0 8px rgba(255,255,255,0.15);
+        opacity:0.75;
+    }
+    50%{
+        text-shadow:
+            0 0 24px rgba(255,255,255,0.35),
+            0 0 48px rgba(255,200,150,0.2);
+        opacity:1;
+    }
+    100%{
+        text-shadow:0 0 8px rgba(255,255,255,0.15);
+        opacity:0.75;
+    }
+}
+
+
+
+@keyframes shimmer{
+    0%{background-position:0%;}
+    100%{background-position:400%;}
+}
+
+@keyframes pulse{
+    0%{opacity:.4;}
+    100%{opacity:1;}
+}
+
+.founder{
+    padding:180px 10%;
+    display:flex;
+    justify-content:center;
+}
+
+.founder-card{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    padding:60px;
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+    max-width:900px;
+}
+
+.founder-image img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+.founder-text h3{
+    font-size:36px;
+    margin-bottom:16px;
+}
+
+.founder-text p{
+    font-size:16px;
+    line-height:1.7;
+    opacity:0.8;
+}
