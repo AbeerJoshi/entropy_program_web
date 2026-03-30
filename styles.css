@@ -323,6 +323,29 @@ header{
     border-radius: 20px;
 }
 
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #e8e8e8;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 140, 50, 0.5);
+    color: #ffffff;
+}
+
 /* Footer */
 footer{
     display:flex;
